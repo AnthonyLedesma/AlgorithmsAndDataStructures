@@ -256,3 +256,40 @@ Leaf Nodes Or Terminal Nodes
     1  3  5  7
 
 ```
+
+#### Adding Data + Searching 
+Adding data
+- Recursive Algorithm is used when adding data
+- In this structure data will align as children on either the left or right path of the parent node depending on value.
+- Lower values fall left and higher values fall right
+
+Searching
+- Searching in a Binary Tree will allow for more rapid searching and lower resource usage when compared to a linked list
+- In a the example above, A search for `8` would check only three nodes using the left or right principle
+- Look left for lower values or look right for higher values.
+
+#### Removing Data
+Remove
+- Find the node toe be deleted
+  * If the node does not exist, exit
+- Left (terminal) node
+  *  Remove parent's pointer to deleted node
+- Non-Leaf node
+  * Find the child to replace the deleted node
+  * Three scenarios
+
+Remove: Case One
+- Removed node has no right child
+  * Left child replace removed element
+  *  The lack of a right child on the removed element indicates that there is no higher value then the parent of the deleted node which will fall between the left node of the deleted node
+
+Remove: Case Two
+- Removed Node has right child, that right child has no left child.
+  * Right child of removed node take the place of removed node. 
+  * Right child that replaced will now become the parent to the left node of the original removed node if exists
+  * The data strucutre which enforces left lower right higher
+
+Remove: Case Three
+- Removed right child has left child
+  * Use the removed right childs left most value as a replacement for the removed value
+  * The invariant strucutre will ensure that he lower leftmost value in the tree is the lowest value in the tree. 
